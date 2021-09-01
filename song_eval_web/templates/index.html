@@ -1,0 +1,153 @@
+{% extends 'common/base.html' %}
+{% block content %}
+{% include 'common/navbar.html' %}
+<div class="container-fluid pt-3 pb-5 pl-5 pr-5">
+    <div class="card main-font-black pt-4 pb-4 pl-5 pr-5" style="background-image: linear-gradient(to bottom, rgba(252,70,107,.2), rgba(63,94,251,.2));border-radius:.8rem;">
+        <p class="card-title h2 font-weight-bold pt-3">推薦策略對於獨立音樂聽眾的偏好結構與推薦效能之影響：<br>以 StreetVoice 為例</p>
+        <p class="card-subtitle text-muted mt-1">本研究透過獨立音樂聽眾本身的個人特質、對於歌曲的喜好以及歌曲的已知與否，探討不同推薦策略對於聽眾偏好與推薦效果的影響。</p>
+        <hr class="my-4">
+        <div class="container-fluid">
+            <div class="row d-flex flex-column">
+                <h3 class="font-weight-bold pb-1" style="color:#003366;">實驗流程與說明</h3>
+                <p>預計時程約為 2 小時至 2.5 小時，總共分為兩階段：</p>
+                <h4 class="font-weight-bold">- 第一階段： 90 首歌曲評估</h4>
+                <p>本階段為歌曲的評估，共包含 3 個部分，每個部份皆會提供 30 首歌曲。<br>
+                    請您<span class="font-weight-bold main-font-red">聆聽</span>頁面中的<span class="font-weight-bold main-font-red">每首歌曲</span>，依據過去是否聆聽過，以及聆聽的滿意程度，回答即可。
+                <p>範例如下：</p>
+                <div class="row pl-2 pr-2">
+                    <div class="container-fluid">
+                        <div class="card mb-4">
+                            <div class="card-header border-0">
+                                <h4 class="main-font-blue font-weight-bold pl-3 mb-1">Song － 範例<span class="card-subtitle h5 text-muted pl-3">of 30</span></h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="container-fluid">
+                                    <div class="row d-flex align-items-center">
+                                        <div class="col-sm-5">
+                                            <iframe class="song-player rounded-sm ml-3 mr-3" src="https://streetvoice.com/music/embed/?id=548294" width="330"
+                                                    height="100" frameborder="no" marginheight="0" marginwidth="0" scrolling="no"></iframe>
+                                        </div>
+                                        <div class="col-sm-7">
+                                            <div class="row-sm-6">
+                                                <h6 class="card-title">是否<span class="h6 font-weight-bold pl-1 pr-1">聆聽過</span>此首歌曲？</h6>
+                                                <div class="btn-group" data-toggle="buttons">
+                                                    <label class="btn btn-outline-custom_blue ml-1 mr-1">
+                                                        <input class="custom-control-input" type="radio">是，曾經聽過
+                                                    </label>
+                                                    <label class="btn btn-outline-custom_blue ml-1 mr-1">
+                                                        <input class="custom-control-input" type="radio">否，從未聽過
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="row-sm-6">
+                                                <h6 class="card-title">對於此首歌曲的<span class="h6 font-weight-bold pl-1 pr-1">滿意程度</span>為何？</h6>
+                                                <div class="btn-group" data-toggle="buttons">
+                                                    <label class="btn btn-outline-custom_blue ml-1 mr-1">
+                                                        <input class="custom-control-input" type="radio">0，完全不滿意
+                                                    </label>
+                                                    <label class="btn btn-outline-custom_blue ml-1 mr-1">
+                                                        <input class="custom-control-input" type="radio">1，不滿意
+                                                    </label>
+                                                    <label class="btn btn-outline-custom_blue ml-1 mr-1">
+                                                        <input class="custom-control-input" type="radio">2，普通
+                                                    </label>
+                                                    <label class="btn btn-outline-custom_blue ml-1 mr-1">
+                                                        <input class="custom-control-input" type="radio">3，滿意
+                                                    </label>
+                                                    <label class="btn btn-outline-custom_blue ml-1 mr-1">
+                                                        <input class="custom-control-input" type="radio">4，完全滿意
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-2 h4 main-font-red font-weight-bold">！重要提醒！</div>
+                    <div class="col-10 font-weight-bold">
+                        <p>1. 請先將電腦桌面右下角的音量控制，<span class="font-weight-bold main-font-red">調整到合適自己的音量</span>，再開始播放歌曲。</p>
+                        <p>2. 歌曲播放期間，可自行<span class="font-weight-bold main-font-red">拖曳調整</span>音樂播放器的<span class="font-weight-bold main-font-red">時間軸</span>。</p>
+                        <p>3. 歌曲聆聽結束或完成作答時，請<span class="font-weight-bold main-font-red">記得暫停</span>音樂播放器的按鈕。</p>
+                        <p>4. <span class="font-weight-bold main-font-red">請勿重新載入頁面或轉跳頁面</span>，若有任何問題或狀況，可立即舉手，將由研究人員為您服務。</p>
+                    </div>
+                </div>
+                <hr class="my-2">
+                <h4 class="font-weight-bold">- 第二階段： 20 題問卷填答</h4>
+                <p>本階段為問卷的填答，請為頁面中的<span class="font-weight-bold main-font-red">每個題目</span>，依據您過去聆聽音樂的經驗，與對於音樂的看法，回答即可。</p>
+                <p>範例如下：</p>
+                <div class="row pl-2 pr-2">
+                    <div class="container-fluid">
+                        <div class="card mb-4">
+                            <div class="card-header border-0">
+                                <h4 class="main-font-blue font-weight-bold pl-3 mb-1">Question － 範例<span class="card-subtitle h5 text-muted pl-3">of 20</span></h4>
+                            </div>
+                            <div class="card-body ml-3">
+                                <div class="container">
+                                    <div class="row d-flex align-items-center card-title h4 pt-1 pb-1">
+                                        問卷問題敘述 - 詢問聆聽經驗與對於音樂的態度
+                                    </div>
+                                    <div class="row pt-1 pb-1">
+                                        <div class="btn-group" data-toggle="buttons">
+                                            <label class="btn btn-outline-custom_blue ml-1 mr-1">
+                                                <input class="custom-control-input" type="radio">0，完全不同意
+                                            </label>
+                                            <label class="btn btn-outline-custom_blue ml-1 mr-1">
+                                                <input class="custom-control-input" type="radio">1，不同意
+                                            </label>
+                                            <label class="btn btn-outline-custom_blue ml-1 mr-1">
+                                                <input class="custom-control-input" type="radio">2，有點不同意
+                                            </label>
+                                            <label class="btn btn-outline-custom_blue ml-1 mr-1">
+                                                <input class="custom-control-input" type="radio">3，普通
+                                            </label>
+                                            <label class="btn btn-outline-custom_blue ml-1 mr-1">
+                                                <input class="custom-control-input" type="radio">4，有點同意
+                                            </label>
+                                            <label class="btn btn-outline-custom_blue ml-1 mr-1">
+                                                <input class="custom-control-input" type="radio">5，同意
+                                            </label>
+                                            <label class="btn btn-outline-custom_blue ml-1 mr-1">
+                                                <input class="custom-control-input" type="radio">6，完全同意
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row d-flex flex-column">
+                <h3 class="font-weight-bold pb-1" style="color:#003366;">其他提醒事項</h3>
+                <p>實驗中的所有問題，皆無標準答案，一切皆<span class="font-weight-bold main-font-red">以您過去的經驗或認知作答</span>即可。</p>
+                <p>實驗過程中，<span class="font-weight-bold main-font-red">請勿重新載入頁面或轉跳頁面</span>，若有任何問題或狀況，可立即舉手，將由研究人員為您服務。</p>
+                <p>完成本實驗所有階段者，將可以獲得實驗<span class="font-weight-bold main-font-red">報酬新臺幣 500 元</span>整。</p>
+                <p>實驗過程中，如需如廁或有任何不適等情形，請舉手告知研究人員，可以隨時暫停實驗休息。</p>
+                <p>研究者將依「個人資料保護法」及相關法令之規定下，蒐集、處理及合理利用參與者於本研究提供之所有資料。</p>
+                <p>將來發表研究成果時，所有資料將以代碼匿名化、去連結化處理，參與者的身份將被充分保密，未經參與者的同意亦不會外流。</p>
+                <div class="row">
+                    <div class="col-2 h5 main-font-red font-weight-bold">研究退出說明</div>
+                    <div class="col-10 font-weight-bold">
+                        <p>1. 您可自由決定是否參加本研究，研究過程中不需要任何理由，可隨時撤回同意或退出研究。</p>
+                        <p>2. 若您拒絕參加或中途退出研究，<span class="font-weight-bold main-font-red">將無法獲得實驗報酬</span>。</p>
+                        <p>3. 研究者將尊重您的意願，協助撤回同意、退出研究並刪除所有相關研究資料。</p>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row d-flex flex-column">
+                <h3 class="font-weight-bold pb-1" style="color:#003366;">開始實驗</h3>
+                <p>若您已準備好，確切知悉上述實驗說明，並同意以上事項，<span class="font-weight-bold main-font-red">請舉手</span>向研究人員確認後，即可開始實驗。</p>
+                <p>研究人員將給予「<span class="font-weight-bold">使用者名稱</span>」與「<span class="font-weight-bold">密碼</span>」，輸入至實驗頁面最右上角，點選「
+                    <a class="font-weight-bold main-font-red" href="#login-btn">登入，開始實驗</a>」即可開始。</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

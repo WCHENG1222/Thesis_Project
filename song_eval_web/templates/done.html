@@ -1,0 +1,41 @@
+{% extends 'common/base.html' %}
+{% block content %}
+{% include 'common/navbar.html' %}
+{% load staticfiles %}
+<!-- CSS area :wave -->
+<link href="{% static 'css/wave.css' %}" rel="stylesheet">
+<div class="container mt-3">
+    <div class="display-1 text-bold text-center text-white">THANKS！</div>
+    <div class="container text-white mt-2">
+        <div class="row d-flex flex-column align-items-center">
+            <p class="h3 pt-1 pb-1">離開前請記得您的個人物品</p>
+            <p class="h5 pt-1 pb-1">請即刻舉手，將有研究人員與您確認，並發放實驗報酬新臺幣 500 元整</p>
+        </div>
+        <div class="row h6 mt-5">
+            <div class="col-3"></div>
+            <div class="col-6">
+                <p class="ml-4">敬祝 安康順心</p>
+                <div class="row mr-4 d-flex justify-content-end">國立臺灣大學 圖書資訊學研究所</div>
+                <div class="row mt-2 mr-4 d-flex justify-content-end">吳承奕 敬上</div>
+            </div>
+            <div class="col-3"></div>
+        </div>
+    </div>
+</div>
+
+<!--Waves Container-->
+<div class="footer">
+    <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+         viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+            <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+            <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+            <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+            <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+            <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+        </g>
+    </svg>
+</div>
+{% endblock %}

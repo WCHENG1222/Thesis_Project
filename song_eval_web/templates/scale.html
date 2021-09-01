@@ -1,0 +1,170 @@
+{% extends 'common/base.html' %}
+{% block content %}
+{% include 'common/navbar.html' %}
+<!-- preference scale form -->
+<div class="container-fluid pt-2 pl-5 pr-5">
+    <div class="card-columns d-flex flex-column">
+        <form class="container-fluid d-flex flex-column align-items-center" id="form_done" method="POST" action="{% url 'post_scale' user_id %}">
+            {% csrf_token %}
+            <input type="hidden" name="entry.23372770" value="{{user_id}}">
+            {% for pref_id, scale_question, pref_val in data.form_data %}
+            <div class="card mb-4">
+                <div class="card-header border-0">
+                    <h4 class="main-font-blue font-weight-bold pl-3 mb-1">Question － {{forloop.counter}} *<span class="card-subtitle h5 text-muted pl-3">of 20</span></h4>
+                </div>
+                <div class="card-body ml-3">
+                    <div class="container">
+                        <div class="row d-flex align-items-center card-title h4 pt-1 pb-1">
+                            {{scale_question}}
+                        </div>
+                        <div class="row pt-1 pb-1">
+                            <div class="btn-group" data-toggle="buttons">
+                                <label class="btn btn-outline-custom_blue ml-1 mr-1">
+                                    <input class="custom-control-input" type="radio" name="{{pref_val}}" value="{{pref_id}}:0" required>0，完全不同意
+                                </label>
+                                <label class="btn btn-outline-custom_blue ml-1 mr-1">
+                                    <input class="custom-control-input" type="radio" name="{{pref_val}}" value="{{pref_id}}:1" required>1，不同意
+                                </label>
+                                <label class="btn btn-outline-custom_blue ml-1 mr-1">
+                                    <input class="custom-control-input" type="radio" name="{{pref_val}}" value="{{pref_id}}:2" required>2，有點不同意
+                                </label>
+                                <label class="btn btn-outline-custom_blue ml-1 mr-1">
+                                    <input class="custom-control-input" type="radio" name="{{pref_val}}" value="{{pref_id}}:3" required>3，普通
+                                </label>
+                                <label class="btn btn-outline-custom_blue ml-1 mr-1">
+                                    <input class="custom-control-input" type="radio" name="{{pref_val}}" value="{{pref_id}}:4" required>4，有點同意
+                                </label>
+                                <label class="btn btn-outline-custom_blue ml-1 mr-1">
+                                    <input class="custom-control-input" type="radio" name="{{pref_val}}" value="{{pref_id}}:5" required>5，同意
+                                </label>
+                                <label class="btn btn-outline-custom_blue ml-1 mr-1">
+                                    <input class="custom-control-input" type="radio" name="{{pref_val}}" value="{{pref_id}}:6" required>6，完全同意
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            <div class="card mb-4">
+                <div class="card-header border-0">
+                    <h4 class="main-font-blue font-weight-bold pl-3 mb-1">基本資料 *</h4>
+                </div>
+                <div class="card-body ml-3">
+                    <div class="container">
+                        <div class="row d-flex align-items-center card-title h5 pt-1 pb-1">生理性別</div>
+                        <div class="row pt-1 pb-1">
+                            <div class="btn-group" data-toggle="buttons">
+                                <label class="btn btn-outline-custom_blue ml-1 mr-1">
+                                    <input class="custom-control-input" type="radio" name="entry.898684063" value="女" required>女
+                                </label>
+                                <label class="btn btn-outline-custom_blue ml-1 mr-1">
+                                    <input class="custom-control-input" type="radio" name="entry.898684063" value="男" required>男
+                                </label>
+                                <label class="btn btn-outline-custom_blue ml-1 mr-1">
+                                    <input class="custom-control-input" type="radio" name="entry.898684063" value="其他" required>其他
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="container">
+                        <div class="row d-flex align-items-center card-title h5 pt-1 pb-1">年齡</div>
+                        <div class="row pt-1 pb-1">
+                            <div class="btn-group" data-toggle="buttons">
+                                <label class="btn btn-outline-custom_blue ml-1 mr-1">
+                                    <input class="custom-control-input" type="radio" name="entry.947362854" value="19 歲以下" required>19 歲以下
+                                </label>
+                                <label class="btn btn-outline-custom_blue ml-1 mr-1">
+                                    <input class="custom-control-input" type="radio" name="entry.947362854" value="20~29 歲" required>20~29 歲
+                                </label>
+                                <label class="btn btn-outline-custom_blue ml-1 mr-1">
+                                    <input class="custom-control-input" type="radio" name="entry.947362854" value="30~39 歲" required>30~39 歲
+                                </label>
+                                <label class="btn btn-outline-custom_blue ml-1 mr-1">
+                                    <input class="custom-control-input" type="radio" name="entry.947362854" value="40~49 歲" required>40~49 歲
+                                </label>
+                                <label class="btn btn-outline-custom_blue ml-1 mr-1">
+                                    <input class="custom-control-input" type="radio" name="entry.947362854" value="50~59 歲" required>50~59 歲
+                                </label>
+                                <label class="btn btn-outline-custom_blue ml-1 mr-1">
+                                    <input class="custom-control-input" type="radio" name="entry.947362854" value="60 歲以上" required>60 歲以上
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="container">
+                        <div class="row d-flex align-items-center card-title h5 pt-1 pb-1">教育程度</div>
+                        <div class="row pt-1 pb-1">
+                            <div class="btn-group" data-toggle="buttons">
+                                <label class="btn btn-outline-custom_blue ml-1 mr-1">
+                                    <input class="custom-control-input" type="radio" name="entry.2099078045" value="高中/職(包含以下)" required>高中/職 (包含以下)
+                                </label>
+                                <label class="btn btn-outline-custom_blue ml-1 mr-1">
+                                    <input class="custom-control-input" type="radio" name="entry.2099078045" value="大學/專科" required>大學/專科
+                                </label>
+                                <label class="btn btn-outline-custom_blue ml-1 mr-1">
+                                    <input class="custom-control-input" type="radio" name="entry.2099078045" value="研究所(包含以上)" required>研究所 (包含以上)
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="container">
+                        <div class="row d-flex align-items-center card-title h5 pt-1 pb-1">專業領域</div>
+                        <div class="row pt-1 pb-1 d-flex flex-column justify-content-between">
+                            <div class="btn-group" data-toggle="buttons">
+                                <div class="col-sm-4 d-flex flex-column">
+                                    <label class="btn btn-outline-custom_blue ml-1 mr-1">
+                                        <input class="custom-control-input" type="radio" name="entry.595334471" value="01 教育領域" required>01 教育領域
+                                    </label>
+                                    <label class="btn btn-outline-custom_blue ml-1 mr-1">
+                                        <input class="custom-control-input" type="radio" name="entry.595334471" value="02 藝術及人文領域" required>02 藝術及人文領域
+                                    </label>
+                                    <label class="btn btn-outline-custom_blue ml-1 mr-1">
+                                        <input class="custom-control-input" type="radio" name="entry.595334471" value="03 社會科學、新聞學及圖書資訊領域" required>03 社會科學、新聞學及圖書資訊領域
+                                    </label>
+                                    <label class="btn btn-outline-custom_blue ml-1 mr-1">
+                                        <input class="custom-control-input" type="radio" name="entry.595334471" value="04 商業、管理及法律領域" required>04 商業、管理及法律領域
+                                    </label>
+                                </div>
+                                <div class="col-sm-4 d-flex flex-column">
+                                    <label class="btn btn-outline-custom_blue ml-1 mr-1">
+                                        <input class="custom-control-input" type="radio" name="entry.595334471" value="05 自然科學、數學及統計領域" required>05 自然科學、數學及統計領域
+                                    </label>
+                                    <label class="btn btn-outline-custom_blue ml-1 mr-1">
+                                        <input class="custom-control-input" type="radio" name="entry.595334471" value="06 資訊通訊科技領域" required>06 資訊通訊科技領域
+                                    </label>
+                                    <label class="btn btn-outline-custom_blue ml-1 mr-1">
+                                        <input class="custom-control-input" type="radio" name="entry.595334471" value="07 工程、製造及營建領域" required>07 工程、製造及營建領域
+                                    </label>
+                                    <label class="btn btn-outline-custom_blue ml-1 mr-1">
+                                        <input class="custom-control-input" type="radio" name="entry.595334471" value="08 農業、林業、漁業及獸醫領域" required>08 農業、林業、漁業及獸醫領域
+                                    </label>
+                                </div>
+                                <div class="col-sm-4 d-flex flex-column">
+                                    <label class="btn btn-outline-custom_blue ml-1 mr-1">
+                                        <input class="custom-control-input" type="radio" name="entry.595334471" value="09 醫藥衛生及社會福利領域" required>09 醫藥衛生及社會福利領域
+                                    </label>
+                                    <label class="btn btn-outline-custom_blue ml-1 mr-1">
+                                        <input class="custom-control-input" type="radio" name="entry.595334471" value="10 服務領域" required>10 服務領域
+                                    </label>
+                                    <label class="btn btn-outline-custom_blue ml-1 mr-1">
+                                        <input class="custom-control-input" type="radio" name="entry.595334471" value="99 其他領域" required>99 其他領域
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row mt-3 mb-5 d-flex justify-content-center">
+                    <button class="btn btn-outline-custom_gold col-sm-3 btn-lg" type="submit">提交，結束本實驗</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

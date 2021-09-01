@@ -1,0 +1,55 @@
+{% extends 'common/base.html' %}
+{% block content %}
+{% include 'common/mobile_navbar.html' %}
+<!-- Content -->
+<div class="container-fluid mt-2 mb-2">
+    <div class="card main-font-black pt-3 pb-3 pl-3 pr-3" style="background-image: linear-gradient(to bottom, rgba(252,70,107,.2), rgba(63,94,251,.2));border-radius:.8rem;">
+        <p class="card-title h2 font-weight-bold">Mobile Version</p>
+        <hr class="my-2">
+        <div class="container-fluid mt-3">
+            <div class="row d-flex flex-column">
+                <h3 class="font-weight-bold pb-1" style="color:#003366;">第一階段： 90 首歌曲聆聽</h3>
+                <p>本頁面提供您於手機聆聽歌曲，共包含 3 個部分，每個部份皆會提供 30 首歌曲。<br>
+                    請<span class="font-weight-bold main-font-red">聆聽</span>頁面中的<span class="font-weight-bold main-font-red">每首歌曲</span>，並於實驗現場的電腦作答即可。
+                <p>範例如下：</p>
+                <div class="row">
+                    <div class="container-fluid">
+                        <div class="card mb-4">
+                            <div class="card-header border-0">
+                                <h4 class="main-font-blue font-weight-bold pl-3 mb-1">Song － 範例<span class="card-subtitle h5 text-muted pl-3">of 30</span></h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="container-fluid d-flex flex-column align-items-center justify-content-center">
+                                    <div class="row-6">
+                                        <!-- https://streetvoice.com/music/embed/?id=song_id&s=l -->
+                                        <iframe class="song-player rounded-sm ml-3 mr-3" src="https://streetvoice.com/music/embed/?id=548294" width="330"
+                                                height="100" frameborder="no" marginheight="0" marginwidth="0" scrolling="no"></iframe>
+                                    </div>
+                                    <div class="row-6 mt-2">
+                                        <input type="button" class="btn btn-outline-custom_red font-weight-bold btn-lg" value="到 StreetVoice APP 聆聽" onclick="location.href='streetvoice://song/548294'">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-2 h4 main-font-red font-weight-bold">！重要提醒！</div>
+                <div class="col-10 font-weight-bold">
+                    <p>1. 請先下載<span class="font-weight-bold main-font-red"> StreetVoice 街聲 APP</span><a href="https://streetvoice.com/pages/mobile-app/" class="ml-2 mr-2" target="_blank">點我下載</a>></p>
+                    <p>2. 手機版實驗頁面的音樂撥放器無法調整時間軸，如有<span class="font-weight-bold main-font-red">調整歌曲時間軸</span>的需求，請點擊按鈕<br><button class="btn btn-outline-custom_red font-weight-bold btn-sm">到 StreetVoice APP 聆聽</button>。</p>
+                    <p>3. 歌曲聆聽結束或完成作答時，請<span class="font-weight-bold main-font-red">記得暫停</span>音樂播放器的按鈕。</p>
+                    <p>4. <span class="font-weight-bold main-font-red">請勿重新載入頁面或轉跳頁面</span>，若有任何問題或狀況，可立即舉手，將由研究人員為您服務。</p>
+                </div>
+            </div>
+            <div class="row d-flex flex-column justify-content-start mt-3">
+                <h3 class="font-weight-bold pb-1" style="color:#003366;">開始實驗</h3>
+                <p>若您已準備好，確切知悉上述實驗說明，<span class="font-weight-bold main-font-red">請舉手</span>向研究人員確認後，即可開始實驗。</p>
+                <p>研究人員將給予「<span class="font-weight-bold">使用者名稱</span>」與「<span class="font-weight-bold">密碼</span>」，輸入至實驗頁面最右上角，點選「
+                    <a class="font-weight-bold main-font-red" href="#login-btn">登入，開始實驗</a>」即可開始。</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,73 @@
+* {
+    font-family: 'Noto Sans TC', sans-serif;
+}
+/* font-family: 'Noto Serif TC', serif; */
+
+.main-font-blue {
+    color: #3f51b5;
+}
+
+.main-font-red {
+    color: #f95358;
+}
+
+.main-font-gold {
+    color: #ffe484;
+}
+
+.main-font-black {
+    color: #404040;
+}
+
+.card {
+    border: 0;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
+}
+
+.song-player {
+    box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, .16), 0 1px 5px 0 rgba(0, 0, 0, .12);
+}
+
+.btn.btn-outline-custom_blue {
+    border-color: #3f51b5 !important;
+    color: #3f51b5 !important;
+}
+
+.btn.btn-outline-custom_blue.active,
+.btn.btn-outline-custom_blue:hover,
+.btn.btn-outline-custom_blue:focus,
+.btn.btn-outline-custom_blue:active,
+.btn.btn-outline-custom_blue:hover:active,
+.btn.btn-outline-custom_blue:active:focus {
+    border-color: #f95358 !important;
+    background-color: #f95358 !important;
+    color: #FFFFFF !important;
+    box-shadow: 0 0 0 .2rem rgba(51, 133, 255, 0.5) !important;
+}
+
+.btn.btn-outline-custom_gold {
+    color: #ffe484;
+    background-color: #404040;
+    border-color: #404040;
+}
+
+.btn.btn-outline-custom_gold:active,
+.btn.btn-outline-custom_gold:hover {
+    color: #2a2730;
+    background-color: #ffe484;
+    border-color: #ffe484;
+}
+
+.btn.btn-outline-custom_red {
+    color: #ff6f61;
+    background-color: #3f51b5;
+    border-color: #3f51b5;
+}
+
+.btn.btn-outline-custom_red:active,
+.btn.btn-outline-custom_red:hover {
+    color: #444444;
+    background-color: #ff6f61;
+    border-color: #ff6f61;
+}
+

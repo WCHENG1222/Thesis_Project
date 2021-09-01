@@ -1,0 +1,26 @@
+{% extends 'common/base.html' %}
+{% block content %}
+{% include 'common/mobile_navbar.html' %}
+{% load staticfiles %}
+<!-- CSS area :wave -->
+<link href="{% static 'css/mobile_wave.css' %}" rel="stylesheet">
+<div class="container mt-5">
+    <div class="h1 text-center text-black-25 font-weight-bold">本階段完成<br>請繼續於電腦填答問卷，謝謝您的配合</div>
+</div>
+
+<!--Waves Container-->
+<div class="footer">
+    <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+         viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+            <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+            <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+            <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+            <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+            <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+        </g>
+    </svg>
+</div>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'common/base.html' %}
+{% block content %}
+{% include 'common/mobile_navbar.html' %}
+<!-- song evaluation form -->
+<div class="card-columns d-flex flex-column mt-4 ml-4 mr-4">
+    <form action="{% url 'get_mobile_strategy' user_id strategy_page %}" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="entry.901433925" value="{{user_id}}">
+        <input type="hidden" name="entry.1290158398" value="{{data.rec_type}}">
+        {% for song_id in data.song_data %}
+        <div class="card mb-4">
+            <div class="card-header border-0">
+                <h4 class="main-font-blue font-weight-bold pl-3 mb-1">Song － {{forloop.counter}} *<span class="card-subtitle h5 text-muted pl-3">of 30</span></h4>
+            </div>
+            <div class="card-body">
+                <div class="container-fluid d-flex flex-column align-items-center justify-content-center">
+                    <div class="row-sm-6">
+                        <!-- https://streetvoice.com/music/embed/?id=song_id&s=l -->
+                        <iframe class="song-player rounded-sm" src="https://streetvoice.com/music/embed/?id={{song_id}}" width="330"
+                                height="100" frameborder="no" marginheight="0" marginwidth="0" scrolling="no"></iframe>
+                    </div>
+                    <div class="row-sm-6 mt-2">
+                        <input type="button" class="btn btn-outline-custom_red font-weight-bold btn-lg" value="到 StreetVoice APP 聆聽" onclick="location.href='streetvoice://song/{{song_id}}'">
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        <div class="container">
+            <div class="row-sm mt-3 mb-5 d-flex justify-content-center">
+                <button class="btn btn-outline-custom_gold btn-lg" type="submit">繼續下一個項目</button>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}
